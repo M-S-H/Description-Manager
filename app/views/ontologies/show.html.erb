@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @ontology.name %>
+</p>
+
+<p>
+  <b>Filetype:</b>
+  <%= @ontology.filetype %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @ontology.location %>
+</p>
+
+
+	<%= form_for [@ontology, OntologicalDescription.new] do |f| %>
+		<p><%= f.submit "Generate Ontological Description" %></p>
+	<% end %>
+
+
+<%= link_to 'Edit', edit_ontology_path(@ontology) %> |
+<%= link_to 'Back', ontologies_path %>

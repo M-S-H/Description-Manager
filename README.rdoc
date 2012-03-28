@@ -1,0 +1,24 @@
+This application allows a user to upload an ontology
+and then generae an ontological description from
+that ontology.
+
+url to ontologies:
+http://localhost:3000/ontologies
+
+url to ontological descriptions:
+http://localhost:3000/ontological_descriptions
+
+
+Once an ontology has been uploaded, an ontological
+description can be generated from its 'show' page.
+This ontological description can then be generated
+from the ontologiacl description index page.
+
+
+Requirements:
+mongodb (not the gem) must be installed
+to install it, type: 'sudo apt-get install mongodb'
+in a terminal.
+
+The appropriate gems can then be installed by 
+running bundle install.

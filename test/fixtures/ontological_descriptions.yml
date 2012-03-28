@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ontology_id: 
+  name: MyString
+  location: MyString
+
+two:
+  ontology_id: 
+  name: MyString
+  location: MyString

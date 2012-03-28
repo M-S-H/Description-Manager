@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ontology:</b>
+  <%= @ontological_description.ontology_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @ontological_description.name %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @ontological_description.location %>
+</p>
+
+
+<%= link_to 'Edit', edit_ontological_description_path(@ontological_description) %> |
+<%= link_to 'Back', ontological_descriptions_path %>

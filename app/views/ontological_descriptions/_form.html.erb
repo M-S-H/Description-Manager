@@ -1,0 +1,29 @@
+<%= form_for(@ontological_description) do |f| %>
+  <% if @ontological_description.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ontological_description.errors.count, "error") %> prohibited this ontological_description from being saved:</h2>
+
+      <ul>
+      <% @ontological_description.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ontology_id %><br />
+    <%= f.text_field :ontology_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

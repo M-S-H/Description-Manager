@@ -1,0 +1,25 @@
+<h1>Listing ontological_descriptions</h1>
+
+<table>
+  <tr>
+    <th>Ontology</th>
+    <th>Name</th>
+    <th>Location</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ontological_descriptions.each do |ontological_description| %>
+  <tr>
+    <td><%= ontological_description.ontology_name %></td>
+    <td><%= ontological_description.name %></td>
+    <td><%= ontological_description.location %></td>
+    <td><%= link_to 'Show', ontological_description %></td>
+    <td><%= link_to 'Destroy', ontological_description, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Download', ontological_description.location.split("./public").last %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

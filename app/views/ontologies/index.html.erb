@@ -1,0 +1,28 @@
+<h1>Listing ontologies</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Filetype</th>
+    <th>Location</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ontologies.each do |ontology| %>
+  <tr>
+    <td><%= ontology.name %></td>
+    <td><%= ontology.filetype %></td>
+    <td><%= ontology.location %></td>
+    <td><%= link_to 'Show', ontology %></td>
+    <td><%= link_to 'Edit', edit_ontology_path(ontology) %></td>
+    <td><%= link_to 'Destroy', ontology, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+<%= link_to 'New Ontology', new_ontology_path %>

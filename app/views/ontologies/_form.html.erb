@@ -1,0 +1,28 @@
+<%= form_for(@ontology, :html => {:multipart => true}) do |f| %>
+  <% if @ontology.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ontology.errors.count, "error") %> prohibited this ontology from being saved:</h2>
+
+      <ul>
+      <% @ontology.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label "File to Upload" %><br />
+	<%= file_field :upload, :datafile %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
