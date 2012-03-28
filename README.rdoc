@@ -22,3 +22,12 @@ in a terminal.
 
 The appropriate gems can then be installed by 
 running bundle install.
+
+== Things I Still Need To Work On:
+- the Ontologies and Ontological Descriptions
+are not properly linked. This will allow several
+ontological descriptions to be generated from a
+single ontology. This causes problems when you want
+to delete them.
+
+- clean up the interface
