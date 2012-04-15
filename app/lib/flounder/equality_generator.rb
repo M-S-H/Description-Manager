@@ -10,6 +10,7 @@ module Flounder
       self.equality_method = 'value'
       yield self if block_given?
       @instructions = []
+	  @instructions.push "attr_accessor :#{equality_method}\n"
       @instructions.push "def == obj"
       @instructions.push "\tself.class == obj.class && self.#{equality_method} == obj.#{equality_method}"
       @instructions.push "end"

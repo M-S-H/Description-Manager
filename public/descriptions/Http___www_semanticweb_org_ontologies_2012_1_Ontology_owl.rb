@@ -1,5 +1,7 @@
 module Http___www_semanticweb_org_ontologies_2012_1_Ontology_owl
 	class Context	
+			attr_accessor :value
+
 			def == obj
 				self.class == obj.class && self.value == obj.value
 			end
@@ -11,6 +13,8 @@ module Http___www_semanticweb_org_ontologies_2012_1_Ontology_owl
 			end
 	end
 	class Environment < Context	
+			attr_accessor :value
+
 			def == obj
 				self.class == obj.class && self.value == obj.value
 			end
@@ -22,6 +26,8 @@ module Http___www_semanticweb_org_ontologies_2012_1_Ontology_owl
 			end
 	end
 	class Device < Environment	
+			attr_accessor :value
+
 			def == obj
 				self.class == obj.class && self.value == obj.value
 			end
@@ -33,6 +39,8 @@ module Http___www_semanticweb_org_ontologies_2012_1_Ontology_owl
 			end
 	end
 	class Domain	
+			attr_accessor :value
+
 			def == obj
 				self.class == obj.class && self.value == obj.value
 			end
@@ -44,6 +52,8 @@ module Http___www_semanticweb_org_ontologies_2012_1_Ontology_owl
 			end
 	end
 	class SecurityDomain < Domain	
+			attr_accessor :value
+
 			def == obj
 				self.class == obj.class && self.value == obj.value
 			end
@@ -57,25 +67,7 @@ module Http___www_semanticweb_org_ontologies_2012_1_Ontology_owl
 	class JWICS < SecurityDomain	
 		include Comparable
 		def <=> obj
-			ordering = ["NIPRNet", "SIPRNet", "JWICS", "NASNet"]
-			obj_short_name = obj.class.to_s.split('::').last
-			self_short_name = self.class.to_s.split('::').last
-			c_idx = ordering.index self_short_name
-			o_idx = ordering.index obj_short_name
-			return nil if c_idx == nil || o_idx == nil
-			if c_idx < o_idx
-				return -1
-			elsif c_idx > o_idx
-				return 1
-			else
-				return 0
-			end
-		end
-	end
-	class NASNet < SecurityDomain	
-		include Comparable
-		def <=> obj
-			ordering = ["NIPRNet", "SIPRNet", "JWICS", "NASNet"]
+			ordering = ["NIPRNet", "SIPRNet", "JWICS", "NSANet"]
 			obj_short_name = obj.class.to_s.split('::').last
 			self_short_name = self.class.to_s.split('::').last
 			c_idx = ordering.index self_short_name
@@ -93,7 +85,25 @@ module Http___www_semanticweb_org_ontologies_2012_1_Ontology_owl
 	class NIPRNet < SecurityDomain	
 		include Comparable
 		def <=> obj
-			ordering = ["NIPRNet", "SIPRNet", "JWICS", "NASNet"]
+			ordering = ["NIPRNet", "SIPRNet", "JWICS", "NSANet"]
+			obj_short_name = obj.class.to_s.split('::').last
+			self_short_name = self.class.to_s.split('::').last
+			c_idx = ordering.index self_short_name
+			o_idx = ordering.index obj_short_name
+			return nil if c_idx == nil || o_idx == nil
+			if c_idx < o_idx
+				return -1
+			elsif c_idx > o_idx
+				return 1
+			else
+				return 0
+			end
+		end
+	end
+	class NSANet < SecurityDomain	
+		include Comparable
+		def <=> obj
+			ordering = ["NIPRNet", "SIPRNet", "JWICS", "NSANet"]
 			obj_short_name = obj.class.to_s.split('::').last
 			self_short_name = self.class.to_s.split('::').last
 			c_idx = ordering.index self_short_name
@@ -109,6 +119,8 @@ module Http___www_semanticweb_org_ontologies_2012_1_Ontology_owl
 		end
 	end
 	class OS < Environment	
+			attr_accessor :value
+
 			def == obj
 				self.class == obj.class && self.value == obj.value
 			end
@@ -120,6 +132,8 @@ module Http___www_semanticweb_org_ontologies_2012_1_Ontology_owl
 			end
 	end
 	class Subject < Context	
+			attr_accessor :value
+
 			def == obj
 				self.class == obj.class && self.value == obj.value
 			end
@@ -131,6 +145,8 @@ module Http___www_semanticweb_org_ontologies_2012_1_Ontology_owl
 			end
 	end
 	class Project < Subject	
+			attr_accessor :value
+
 			def == obj
 				self.class == obj.class && self.value == obj.value
 			end
@@ -142,6 +158,8 @@ module Http___www_semanticweb_org_ontologies_2012_1_Ontology_owl
 			end
 	end
 	class Role < Subject	
+			attr_accessor :value
+
 			def == obj
 				self.class == obj.class && self.value == obj.value
 			end
@@ -155,7 +173,7 @@ module Http___www_semanticweb_org_ontologies_2012_1_Ontology_owl
 	class SIPRNet < SecurityDomain	
 		include Comparable
 		def <=> obj
-			ordering = ["NIPRNet", "SIPRNet", "JWICS", "NASNet"]
+			ordering = ["NIPRNet", "SIPRNet", "JWICS", "NSANet"]
 			obj_short_name = obj.class.to_s.split('::').last
 			self_short_name = self.class.to_s.split('::').last
 			c_idx = ordering.index self_short_name
@@ -171,6 +189,8 @@ module Http___www_semanticweb_org_ontologies_2012_1_Ontology_owl
 		end
 	end
 	class SecurityClassification < Domain	
+			attr_accessor :value
+
 			def == obj
 				self.class == obj.class && self.value == obj.value
 			end
@@ -184,7 +204,7 @@ module Http___www_semanticweb_org_ontologies_2012_1_Ontology_owl
 	class Secret < SecurityClassification	
 		include Comparable
 		def <=> obj
-			ordering = ["Unclassified", "Secret", "Top_Secret"]
+			ordering = ["Unclassified", "Secret", "TopSecret", "TopSecretSCI"]
 			obj_short_name = obj.class.to_s.split('::').last
 			self_short_name = self.class.to_s.split('::').last
 			c_idx = ordering.index self_short_name
@@ -199,10 +219,28 @@ module Http___www_semanticweb_org_ontologies_2012_1_Ontology_owl
 			end
 		end
 	end
-	class Top_Secret < SecurityClassification	
+	class TopSecret < SecurityClassification	
 		include Comparable
 		def <=> obj
-			ordering = ["Unclassified", "Secret", "Top_Secret"]
+			ordering = ["Unclassified", "Secret", "TopSecret", "TopSecretSCI"]
+			obj_short_name = obj.class.to_s.split('::').last
+			self_short_name = self.class.to_s.split('::').last
+			c_idx = ordering.index self_short_name
+			o_idx = ordering.index obj_short_name
+			return nil if c_idx == nil || o_idx == nil
+			if c_idx < o_idx
+				return -1
+			elsif c_idx > o_idx
+				return 1
+			else
+				return 0
+			end
+		end
+	end
+	class TopSecretSCI < SecurityClassification	
+		include Comparable
+		def <=> obj
+			ordering = ["Unclassified", "Secret", "TopSecret", "TopSecretSCI"]
 			obj_short_name = obj.class.to_s.split('::').last
 			self_short_name = self.class.to_s.split('::').last
 			c_idx = ordering.index self_short_name
@@ -220,7 +258,7 @@ module Http___www_semanticweb_org_ontologies_2012_1_Ontology_owl
 	class Unclassified < SecurityClassification	
 		include Comparable
 		def <=> obj
-			ordering = ["Unclassified", "Secret", "Top_Secret"]
+			ordering = ["Unclassified", "Secret", "TopSecret", "TopSecretSCI"]
 			obj_short_name = obj.class.to_s.split('::').last
 			self_short_name = self.class.to_s.split('::').last
 			c_idx = ordering.index self_short_name

@@ -15,6 +15,6 @@
   <%= @ontological_description.location %>
 </p>
 
-
+<%= link_to 'Download', @ontological_description.location.split("./public").last %> |
 <%= link_to 'Edit', edit_ontological_description_path(@ontological_description) %> |
 <%= link_to 'Back', ontological_descriptions_path %>

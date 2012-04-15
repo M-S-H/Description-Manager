@@ -4,7 +4,7 @@ class Ontology
   key :name, String
   key :filetype, String
   key :location, String
-  one :OntologicalDescription
+  one :ontological_description
 
   validates_presence_of :name
 
